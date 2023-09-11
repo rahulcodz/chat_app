@@ -32,5 +32,5 @@ io.on("connection", socket => {
 })
 
 server.listen(8900, () => {
-  console.log("Connected")
+  console.log("Connected new")
 })

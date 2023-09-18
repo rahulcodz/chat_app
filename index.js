@@ -9,7 +9,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-client-ivory.vercel.app/",
+    origin: "http://localhost:3001",
     methods: ["GET", "POST"],
   },
 })
@@ -29,6 +29,10 @@ io.on("connection", socket => {
   socket.on("disconnect", () => {
     console.log("User Disconnected", socket.id)
   })
+})
+
+app.get("/new", (req, res) => {
+  res.json("hello world")
 })
 
 server.listen(8900, () => {
